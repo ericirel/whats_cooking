@@ -7,7 +7,37 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <img id="logo-pic" src="http://cdn.flaticon.com/png/256/8101.png">
+    <h2 id="logo">What's Cooking?</h2>
+    <ul id="nav">
+      <li>
+        <h2><%= link_to 'Home', root_path %></h2>
+      </li>
+      <li>
+        <h2><%= link_to 'Recipes', recipes_path %></h2>
+      </li>
+      <li>
+        <h2><%= link_to 'About' %></h2>
+      <li>
+        <% if current_user %>
+        <p>Hey <%= current_user.email %> |
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+        </p>
+      </li>
+    <% else %>
+    <li>
+      <p>
+        <%= link_to 'sign in', new_user_session_path %> |
+        <%= link_to 'sign up', new_user_registration_path %>
+      </li>
+    </p>
+<% end %>
+  </ul>
+</header>
 
+<%= flash[:notice] if flash[:notice] %>
+<%= flash[:alert] if flash[:alert] %>
 <%= yield %>
 
 </body>
