@@ -1,10 +1,20 @@
-<%= form_for @user do |f| %>
+<%= form_for(@user, html: {multipart: true}) do |f| %>
 
 <%= f.label :first_name %>
 <%= f.text_field :fname %></br>
 </br>
 <%= f.label :last_name %>
 <%= f.text_field :lname %></br>
-
+</br>
+<%= f.label :location %>
+<%= f.text_field :location %></br>
+</br>
+<%= f.label :favorite_cuisine %>
+<%= f.text_field :favorite_cuisine %></br>
+</br>
+<p>
+  <%= f.label :image, "Attach an Image" %></br>
+  <%= f.file_field :image %>
+</p>
 <%= f.submit %>
 <% end %>

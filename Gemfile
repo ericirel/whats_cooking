@@ -12,5 +12,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 gem 'devise'
-gem 'kaminari'
+gem 'will_paginate', '~> 3.0.6'
+gem 'paperclip'
 

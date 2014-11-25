@@ -1,7 +1,8 @@
 class RecipesController < ApplicationController
 
   def index
-    @recipes = Recipe.order("title").page(params[:page])
+    @recipes = Recipe.paginate(:page => params[:page] || 1, :per_page => params[:per_page] || 3)
+    @recipes = Recipe.search(params[:search])
   end
 
   def edit
@@ -49,7 +50,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :ingredients, :directions, :time).merge(user_id: current_user.id)
+    params.require(:recipe).permit(:title, :ingredients, :directions, :time)
   end
 end
 

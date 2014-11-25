@@ -15,7 +15,7 @@
  */
 body{
   font-family: sans-serif;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 a{
@@ -33,7 +33,7 @@ header {
   padding-bottom: 1em;
   border-bottom: 1px solid #ccc;
   margin-right: 1em;
-  background-color: #ecf0f1;
+  background-color: #2ABB9B;
 }
 
 #sign-up{
@@ -67,7 +67,7 @@ input{
 
 #post-recipe{
   text-align: center;
-  background-color: #52B3D9;
+  background-color: #eeeeee;
 }
 
 #post-recipe-title{
