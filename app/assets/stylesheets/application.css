@@ -61,7 +61,7 @@ textarea{
 input{
   width: 40%;
   height: 30px;
-  border: 2px solid #6BB9F0;
+  border: 2px solid #6C7A89;
   border-radius: 5px;
 }
 
@@ -103,4 +103,6 @@ input{
   background-color: #FFECDB;
 }
 
-
+button{
+  background-color: #F89406;
+}

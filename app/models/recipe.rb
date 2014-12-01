@@ -14,13 +14,9 @@ class Recipe < ActiveRecord::Base
     self.tags.collect do |tag|
       tag.name
     end.join(", ")
-
-  def self.search(search)
-    if search
-      where('title LIKE :search OR directions LIKE :search OR ingredients LIKE :search', search: "%#{search}%")
-    else
-      self.all
-    end
   end
+
+  def self.search_for(query)
+      where('title LIKE :query OR directions LIKE :query OR ingredients LIKE :query', query: "%#{query}%")
   end
 end

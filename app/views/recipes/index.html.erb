@@ -1,13 +1,13 @@
 <h2> Recipes </h2>
-<%= button_to "Post recipe", new_recipe_path %>
+<%= button_to "Post a new recipe", new_recipe_path %>
 <%= form_tag recipes_path, :method => 'get' do %>
   <p>
-    <%= text_field_tag :search, params[:search] %></br>
-    <%= submit_tag "Search", :title => nil %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
 
-<%= will_paginate @recipes %>
+<%= will_paginate @recipe %>
 <ul>
   <% @recipes.each do |recipe| %>
   <li><%= link_to recipe.title, recipe_path(recipe) %></li>
@@ -28,4 +28,4 @@
 </br>
 <% end %>
 </ul>
-<%= will_paginate @recipes %>
+<%= will_paginate @recipe %>
