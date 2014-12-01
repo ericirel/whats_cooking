@@ -2,7 +2,6 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.paginate(:page => params[:page] || 1, :per_page => params[:per_page] || 3)
-    @recipes = Recipe.search(params[:search])
   end
 
   def edit

@@ -1,8 +1,8 @@
 <h2> Recipes </h2>
-<h3><%= link_to "Post recipe", new_recipe_path %></h3>
-<%= form_tag recipe_path, :method => 'get' do %>
+<%= button_to "Post recipe", new_recipe_path %>
+<%= form_tag recipes_path, :method => 'get' do %>
   <p>
-    <%= text_field_tag :search, params[:search] %>
+    <%= text_field_tag :search, params[:search] %></br>
     <%= submit_tag "Search", :title => nil %>
   </p>
 <% end %>

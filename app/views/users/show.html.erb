@@ -1,6 +1,6 @@
 <h2>Your Profile</h2>
-<h3><%= current_user.fname %></h3>
-<h3><%= current_user.lname %></h3>
+<h3><%= @user.fname %> <%= @user.lname %></h3>
 <h3><%= current_user.email %></h3>
-<h3>Location: <%= current_user.location %></h3>
-<h3>Favorite Food: <%= current_user.favorite_cuisine %></h3>
+<h3>Location: <%= @user.location %></h3>
+<h3>Favorite Food: <%= @user.favorite_cuisine %></h3>
+<%= link_to "Edit Profile", edit_user_path %>
