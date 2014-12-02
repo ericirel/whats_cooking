@@ -2,6 +2,8 @@
 <%= button_to "Post a new recipe", new_recipe_path %>
 <%= form_tag recipes_path, :method => 'get' do %>
   <p>
+    Search any ingredient, recipe or cuisine:
+  <p>
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>
   </p>
@@ -26,6 +28,7 @@
     Votes: <%= recipe.votes.where(:up => true).count - recipe.votes.where(:up => false).count %>
   </br>
 </br>
+<p>by <%= @recipes.first.user %> </p>
 <% end %>
 </ul>
 <%= will_paginate @recipe %>
