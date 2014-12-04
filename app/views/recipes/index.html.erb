@@ -1,10 +1,10 @@
 <h2> Recipes </h2>
 <%= button_to "Post a new recipe", new_recipe_path %>
 <%= form_tag recipes_path, :method => 'get' do %>
-  <p>
+  <p id="search-food">
     Search any ingredient, recipe or cuisine:
-  <p>
-    <%= text_field_tag :search, params[:search] %>
+
+    <%= text_field_tag :search, params[:search] %></br>
     <%= submit_tag "Search", :name => nil %>
   </p>
 <% end %>
@@ -22,13 +22,14 @@
     *
   <% else %>
     <%= link_to "-", votes_path(:vote => { :recipe_id => recipe.id, :up => false }), :method => :post %>
-  <% end %>
+
     Up: <%= recipe.votes.where(:up => true).count %>
     Down: <%= recipe.votes.where(:up => false).count %>
     Votes: <%= recipe.votes.where(:up => true).count - recipe.votes.where(:up => false).count %>
   </br>
 </br>
-<p>by <%= @recipes.first.user %> </p>
+
+  <% end %>
 <% end %>
 </ul>
 <%= will_paginate @recipe %>
