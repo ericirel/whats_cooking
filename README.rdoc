@@ -1,5 +1,5 @@
-What's Cooking is set to be a social media recipe site.
+What's Cooking is set to be a social media cooking/culinary service.
 
-Users can post, rate, share, and talk about uploaded recipes.
+Users can post, rate, share, and chat about uploaded recipes.
 
-Currently still a work in progess.
+Currently a work in progess.
